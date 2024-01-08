@@ -1,6 +1,6 @@
 import {isNumeric} from "../lib/isNumeric";
 
-export function difference(matrix1: number[][], matrix2: number[][]): number[][] | null {
+export function subtractMatrices(matrix1: number[][], matrix2: number[][]): number[][] | null {
     const row1: number = matrix1.length;
     const col1: number = matrix1[0].length;
     const row2: number = matrix2.length;
