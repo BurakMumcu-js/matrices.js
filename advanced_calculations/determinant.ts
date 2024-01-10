@@ -1,6 +1,6 @@
 import {isNumeric} from "../lib/isNumeric";
 
-function calculateDeterminant (matrice: number[][]): number {
+export function calculateDeterminant (matrice: number[][]): number {
     if (!matrice.every(row => row.every(element => isNumeric(element)))) {
         throw new Error("matrice elements must be a Number");
     }
