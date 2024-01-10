@@ -1,4 +1,5 @@
-import {isNumeric} from "../lib/isNumeric";
+import {isMatrisNumeric, isNumeric} from "../lib/isNumeric";
+import {DimensionError, NumericError} from "../lib/Error";
 
 export function sumMultipleMatrices(...matrices: number[][][]): number[][] | null {
     if (matrices.length < 2) {
@@ -13,27 +14,21 @@ export function sumMultipleMatrices(...matrices: number[][][]): number[][] | nul
         const col: number = matrices[i][0].length;
 
         if (row !== row1 || col !== col1) {
-           throw new Error("The sizes of the matrices do not match, you cannot add the matrices.")
+           throw DimensionError;
         }
     }
 
-    for (const matrix of matrices) {
-        for (let i = 0; i < row1; i++) {
-            for (let j = 0; j < col1; j++) {
-                if (!isNumeric(matrix[i][j])) {
-                    throw new Error("Matrix elements are not numbers, you cannot add matrices.")
-                }
-            }
-        }
+    for (const matrice of matrices) {
+      if (!isMatrisNumeric(matrice)) throw NumericError;
     }
 
-    const resultMatrix: number[][] = [];
+    const resultMatrice: number[][] = [];
     for (let i = 0; i < row1; i++) {
-        resultMatrix[i] = [];
+        resultMatrice[i] = [];
         for (let j = 0; j < col1; j++) {
-            resultMatrix[i][j] = matrices.reduce((sum, matrix) => sum + matrix[i][j], 0);
+            resultMatrice[i][j] = matrices.reduce((sum, matrice) => sum + matrice[i][j], 0);
         }
     }
 
-    return resultMatrix;
+    return resultMatrice;
 }

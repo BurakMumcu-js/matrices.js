@@ -1,37 +1,33 @@
-import {isNumeric} from "../lib/isNumeric";
+import {isMatrisNumeric, isNumeric} from "../lib/isNumeric";
+import {DimensionError, NumericError} from "../lib/Error";
 
-export function multiplyMatrices(matrix1: number[][], matrix2: number[][]): number[][] | null {
-    const row1: number = matrix1.length;
-    const col1: number = matrix1[0].length;
-    const row2: number = matrix2.length;
-    const col2: number = matrix2[0].length;
+export function multiplyMatrices(matrice1: number[][], matrice2: number[][]): number[][] | null {
+    const row1: number = matrice1.length;
+    const col1: number = matrice1[0].length;
+    const row2: number = matrice2.length;
+    const col2: number = matrice2[0].length;
 
-    if (col1 !== row2) {
-        throw new Error("Matrices do not have multiplicative dimensions, you cannot multiply matrices.");
-    }
+    if (!isMatrisNumeric(matrice1) || !isMatrisNumeric(matrice2)) throw NumericError;
+
+    if (col1 !== row2) throw DimensionError;
 
     const resultMatrix: number[][] = [];
     for (let i = 0; i < row1; i++) {
         resultMatrix[i] = [];
         for (let j = 0; j < col2; j++) {
             resultMatrix[i][j] = 0;
-            if (isNumeric(matrix1[i][j]) && isNumeric(matrix2[i][j])) {
                 for (let k = 0; k < col1; k++) {
-                    resultMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
+                    resultMatrix[i][j] += matrice1[i][k] * matrice2[k][j];
                 }
-            } else {
-                throw new Error("Matrix elements are not numbers, you cannot multiply them")
-            }
         }
     }
     return resultMatrix;
 }
 
 export function multiplyOneMatrice(matrice:number[][], num:number):number[][]{
-    if (!matrice.every(row => row.every(element => isNumeric(element)))) {
-        throw new Error("Matrisin elemanları sayı olmalıdır.");
-    }
-    const carpilmisMatris = matrice.map(row => row.map(element => element * num));
+    if (!isMatrisNumeric(matrice) || !isNumeric(num)) throw NumericError;
 
-    return carpilmisMatris;
+    const multiplied_matrice = matrice.map(row => row.map(element => element * num));
+
+    return multiplied_matrice;
 }
