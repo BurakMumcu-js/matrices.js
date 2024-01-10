@@ -26,3 +26,12 @@ export function multiplyMatrices(matrix1: number[][], matrix2: number[][]): numb
     }
     return resultMatrix;
 }
+
+export function multiplyOneMatrice(matrice:number[][], num:number):number[][]{
+    if (!matrice.every(row => row.every(element => isNumeric(element)))) {
+        throw new Error("Matrisin elemanları sayı olmalıdır.");
+    }
+    const carpilmisMatris = matrice.map(row => row.map(element => element * num));
+
+    return carpilmisMatris;
+}
