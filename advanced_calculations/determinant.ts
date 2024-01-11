@@ -1,7 +1,7 @@
 import {isMatriceNumeric, isNumeric} from "../lib/isNumeric";
 import {DimensionError, NumericError} from "../lib/Error";
 
-export function calculateDeterminant(matrice: number[][]): number {
+export function determinant(matrice: number[][]): number {
     if (!isMatriceNumeric(matrice)) throw NumericError;
 
     if (matrice.length !== matrice[0].length) throw DimensionError;
@@ -12,7 +12,7 @@ export function calculateDeterminant(matrice: number[][]): number {
     for (let i = 0; i < matrice.length; i++) {
         const coefficient = matrice[0][i];
         const lower_matrice = matrice.slice(1).map(row => row.filter((_, j) => j !== i));
-        det += coefficient * calculateDeterminant(lower_matrice) * (i % 2 === 0 ? 1 : -1);
+        det += coefficient * determinant(lower_matrice) * (i % 2 === 0 ? 1 : -1);
     }
     return det;
 }

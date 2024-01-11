@@ -1,6 +1,6 @@
 import {DimensionError} from "../lib/Error";
 
-function transposeOfMatrice(matrice: number[][]): number[][] {
+function transpose(matrice: number[][]): number[][] {
 
     if (!matrice.every(row => row.length === matrice[0].length)) throw DimensionError
 
