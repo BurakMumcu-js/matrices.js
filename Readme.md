@@ -64,14 +64,14 @@ console.log(`Matrix to the power of ${power}:`, resultMatrixPower);
 
 ## API
 
-sumMultipleMatrices(matrixA: number[][], matrixB: number[][]): number[][]: Returns the sum of two matrices.  
-subtractMatrices(matrixA: number[][], matrixB: number[][]): number[][]: Returns the difference between two matrices.  
-multiplyMatrices(matrixA: number[][], matrixB: number[][]): number[][]: Returns the product of two matrices.  
-multiplyOneMatrice(matrixA: number[][],num: number): number[][]: Returns the product of a matrice and a number
-transpose(matrix: number[][]): number[][]: Returns the transpose of a matrice.  
-inverseOfMatrice(matrix: number[][]): number[][] | null: Returns the inverse of a matrice. 
-determinant(matrix: number[][]): number | null: Returns the determinant of a matrice.
-powerOfMatrice(matrix: number[][], power: number): number[][] | null: Returns the matrice raised to the specified power.  
+sumMultipleMatrices(matrixA: number[][], matrixB: number[][]): number[][]: Returns the sum of two matrices.    
+subtractMatrices(matrixA: number[][], matrixB: number[][]): number[][]: Returns the difference between two matrices.    
+multiplyMatrices(matrixA: number[][], matrixB: number[][]): number[][]: Returns the product of two matrices.    
+multiplyOneMatrice(matrixA: number[][],num: number): number[][]: Returns the product of a matrice and a number  
+transpose(matrix: number[][]): number[][]: Returns the transpose of a matrice.    
+inverseOfMatrice(matrix: number[][]): number[][] | null: Returns the inverse of a matrice.   
+determinant(matrix: number[][]): number | null: Returns the determinant of a matrice.  
+powerOfMatrice(matrix: number[][], power: number): number[][] | null: Returns the matrice raised to the specified power.    
 
 
 # matrices.js
@@ -140,11 +140,11 @@ console.log(`Matrix to the power of ${power}:`, resultMatrixPower);
 
 ## API
 
-sumMultipleMatrices(matrixA: number[][], matrixB: number[][]): number[][]: İki matrisin toplamını döndürür.  
-subtractMatrices(matrixA: number[][], matrixB: number[][]): number[][]: İki matris arasındaki farkı döndürür. 
-multiplyMatrices(matrixA: number[][], matrixB: number[][]): number[][]: İki matrisin çarpımını döndürür.  
-multiplyOneMatrice(matrixA: number[][],num: number): number[][]: Bir matris ile bir sayının çarpımını döndürür
-transpose(matrix: number[][]): number[][]:  Bir matrisin transpozunu döndürür. 
-inverseOfMatrice(matrix: number[][]): number[][] | null: Bir matrisin tersini döndürür.
-determinant(matrix: number[][]): number | null: Bir matrisin determinantını döndürür.
-powerOfMatrice(matrix: number[][], power: number): number[][] | null: Bir matrisin belirtilen üssünü döndürür  
+sumMultipleMatrices(matrixA: number[][], matrixB: number[][]): number[][]: İki matrisin toplamını döndürür.    
+subtractMatrices(matrixA: number[][], matrixB: number[][]): number[][]: İki matris arasındaki farkı döndürür.   
+multiplyMatrices(matrixA: number[][], matrixB: number[][]): number[][]: İki matrisin çarpımını döndürür.    
+multiplyOneMatrice(matrixA: number[][],num: number): number[][]: Bir matris ile bir sayının çarpımını döndürür  
+transpose(matrix: number[][]): number[][]:  Bir matrisin transpozunu döndürür.   
+inverseOfMatrice(matrix: number[][]): number[][] | null: Bir matrisin tersini döndürür.  
+determinant(matrix: number[][]): number | null: Bir matrisin determinantını döndürür.  
+powerOfMatrice(matrix: number[][], power: number): number[][] | null: Bir matrisin belirtilen üssünü döndürür    
