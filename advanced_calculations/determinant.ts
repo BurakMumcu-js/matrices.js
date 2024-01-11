@@ -1,8 +1,8 @@
-import {isMatrisNumeric, isNumeric} from "../lib/isNumeric";
+import {isMatriceNumeric, isNumeric} from "../lib/isNumeric";
 import {DimensionError, NumericError} from "../lib/Error";
 
 export function calculateDeterminant(matrice: number[][]): number {
-    if (!isMatrisNumeric(matrice)) throw NumericError;
+    if (!isMatriceNumeric(matrice)) throw NumericError;
 
     if (matrice.length !== matrice[0].length) throw DimensionError;
     if (matrice.length === 2 && matrice[0].length === 2) {

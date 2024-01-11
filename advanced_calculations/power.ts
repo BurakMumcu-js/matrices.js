@@ -1,12 +1,12 @@
 import {DimensionError, NumericError,ResponseError} from "../lib/Error";
-import {isMatrisNumeric} from "../lib/isNumeric";
-import {multiplyMatrices} from "../four_transactions/multiply";
+import {isMatriceNumeric} from "../lib/isNumeric";
+import {multiplyMatrices} from "../basic_calculations/multiply";
 
 export function powerOfMatrice(matrice: number[][], power: number): number[][] | null {
 
     if (matrice.length !== matrice[0].length) throw DimensionError;
 
-    if (!isMatrisNumeric(matrice)) throw NumericError;
+    if (!isMatriceNumeric(matrice)) throw NumericError;
 
     if (power < 0) {
          new ResponseError("Power must be positive");

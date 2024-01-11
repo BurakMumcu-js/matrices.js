@@ -1,4 +1,4 @@
-import {isMatrisNumeric, isNumeric} from "../lib/isNumeric";
+import {isMatriceNumeric, isNumeric} from "../lib/isNumeric";
 import {DimensionError, NumericError} from "../lib/Error";
 
 export function sumMultipleMatrices(...matrices: number[][][]): number[][] | null {
@@ -19,7 +19,7 @@ export function sumMultipleMatrices(...matrices: number[][][]): number[][] | nul
     }
 
     for (const matrice of matrices) {
-      if (!isMatrisNumeric(matrice)) throw NumericError;
+      if (!isMatriceNumeric(matrice)) throw NumericError;
     }
 
     const resultMatrice: number[][] = [];

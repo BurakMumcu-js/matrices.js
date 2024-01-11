@@ -1,4 +1,4 @@
-import {isMatrisNumeric, isNumeric} from "../lib/isNumeric";
+import {isMatriceNumeric, isNumeric} from "../lib/isNumeric";
 import {DimensionError, NumericError} from "../lib/Error";
 
 export function multiplyMatrices(matrice1: number[][], matrice2: number[][]): number[][] | null {
@@ -7,7 +7,7 @@ export function multiplyMatrices(matrice1: number[][], matrice2: number[][]): nu
     const row2: number = matrice2.length;
     const col2: number = matrice2[0].length;
 
-    if (!isMatrisNumeric(matrice1) || !isMatrisNumeric(matrice2)) throw NumericError;
+    if (!isMatriceNumeric(matrice1) || !isMatriceNumeric(matrice2)) throw NumericError;
 
     if (col1 !== row2) throw DimensionError;
 
@@ -25,7 +25,7 @@ export function multiplyMatrices(matrice1: number[][], matrice2: number[][]): nu
 }
 
 export function multiplyOneMatrice(matrice:number[][], num:number):number[][]{
-    if (!isMatrisNumeric(matrice) || !isNumeric(num)) throw NumericError;
+    if (!isMatriceNumeric(matrice) || !isNumeric(num)) throw NumericError;
 
     const multiplied_matrice = matrice.map(row => row.map(element => element * num));
 

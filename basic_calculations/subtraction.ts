@@ -1,4 +1,4 @@
-import {isMatrisNumeric} from "../lib/isNumeric";
+import {isMatriceNumeric} from "../lib/isNumeric";
 import {DimensionError, NumericError} from "../lib/Error";
 
 export function subtractMatrices(matrice1: number[][], matrice2: number[][]): number[][] | null {
@@ -7,7 +7,7 @@ export function subtractMatrices(matrice1: number[][], matrice2: number[][]): nu
     const row2: number = matrice2.length;
     const col2: number = matrice2[0].length;
 
-    if (!isMatrisNumeric(matrice1) || !isMatrisNumeric(matrice2)) throw NumericError;
+    if (!isMatriceNumeric(matrice1) || !isMatriceNumeric(matrice2)) throw NumericError;
 
     if (row1 !== row2 || col1 !== col2) {
         throw DimensionError;
