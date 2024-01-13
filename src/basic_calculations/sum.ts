@@ -1,7 +1,7 @@
 import {isMatriceNumeric, isNumeric} from "../lib/isNumeric";
 import {DimensionError, NumericError} from "../lib/Error";
 
-export function sumMultipleMatrices(...matrices: number[][][]): number[][] | null {
+export function sum(...matrices: number[][][]): number[][] | null {
     if (matrices.length < 2) {
         throw new Error("You must enter at least 2 matrices")
     }

@@ -1,8 +1,8 @@
 import {DimensionError, NumericError,ResponseError} from "../lib/Error";
 import {isMatriceNumeric} from "../lib/isNumeric";
-import {multiplyMatrices} from "../basic_calculations/multiply";
+import {multiply} from "../basic_calculations/multiply";
 
-export function powerOfMatrice(matrice: number[][], power: number): number[][] | null {
+export function power(matrice: number[][], power: number): number[][] | null {
 
     if (matrice.length !== matrice[0].length) throw DimensionError;
 
@@ -13,10 +13,10 @@ export function powerOfMatrice(matrice: number[][], power: number): number[][] |
     }
 
     // Matrisin üssünü al
-    let result: number[][] = matrice;
+    let result: number[][] | null = matrice;
 
     for (let i = 1; i < power; i++) {
-        result = multiplyMatrices(result, matrice);
+        result = multiply(result, matrice);
     }
     return result;
 }

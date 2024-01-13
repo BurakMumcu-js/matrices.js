@@ -1,6 +1,6 @@
 import {determinant} from './determinant'
 
-export function inverseOfMatrice(matrice: number[][]): number[][] | null {
+export function inverse(matrice: number[][]): number[][] | null {
     const det = determinant(matrice)
     if (det === 0) throw new Error("Since the determinant is zero, its inverse cannot be found.")
     const n = matrice.length;

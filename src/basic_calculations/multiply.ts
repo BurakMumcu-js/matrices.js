@@ -1,7 +1,8 @@
 import {isMatriceNumeric, isNumeric} from "../lib/isNumeric";
 import {DimensionError, NumericError} from "../lib/Error";
 
-export function multiplyMatrices(matrice1: number[][], matrice2: number[][]): number[][] | null {
+export function multiply(matrice1: number[][] | null, matrice2: number[][]): number[][] | null {
+    if (matrice1 == null || matrice2 == null) throw DimensionError;
     const row1: number = matrice1.length;
     const col1: number = matrice1[0].length;
     const row2: number = matrice2.length;

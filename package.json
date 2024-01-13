@@ -1,9 +1,12 @@
 {
   "name": "matrices",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple NPM package for matrix operations.",
+  "main": "./dist/matrices.js",
+  "types": "./dist/matrices.d.ts",
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
