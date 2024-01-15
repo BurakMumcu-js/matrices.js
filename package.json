@@ -1,6 +1,6 @@
 {
   "name": "matrices-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple NPM package for matrix operations.",
   "main": "./dist/matrices.js",
   "types": "./dist/matrices.d.ts",
