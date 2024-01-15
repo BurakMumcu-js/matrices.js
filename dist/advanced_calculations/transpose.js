@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.transpose = void 0;
 const Error_1 = require("../lib/Error");
 function transpose(matrice) {
     if (!matrice.every(row => row.length === matrice[0].length))
@@ -13,3 +14,4 @@ function transpose(matrice) {
     }
     return transposeMatrice;
 }
+exports.transpose = transpose;
